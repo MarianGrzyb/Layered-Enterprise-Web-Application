@@ -1,0 +1,28 @@
+### MushroomPicker - Create
+POST http://localhost:8082/mushroomPickers
+Content-Type: application/json
+
+{
+  "name": "Zia",
+  "surname": "ZIE4"
+}
+
+### MushroomPicker - Get all
+GET http://localhost:8082/mushroomPickers
+Accept: application/json
+
+### MushroomPicker - Get by ID
+GET http://localhost:8082/mushroomPickers/dc85ea98-1ef8-4390-8a68-60b7886ec3f3
+Accept: application/json
+
+### MushroomPicker - Update
+PUT http://localhost:8082/mushroomPickers/dc85ea98-1ef8-4390-8a68-60b7886ec3f3
+Content-Type: application/json
+
+{
+  "name": "ZIE",
+  "surname": "Zia"
+}
+
+### MushroomPicker - Delete
+DELETE http://localhost:8082/mushroomPickers/af8f0354-ea56-4803-91e4-1ac07a5dc6cd
