@@ -1,0 +1,32 @@
+### Mushroom - Create
+POST http://localhost:8082/mushrooms
+Content-Type: application/json
+
+{
+  "name": "Test Mushroom",
+  "toxic": "Highly Toxic",
+  "mushroomPickerId": "fe9ff0e1-23f3-432c-a9ab-c4c0a2115948"
+}
+
+### Mushroom - Get all
+GET http://localhost:8082/mushrooms
+Accept: application/json
+
+### Mushroom - Get by ID
+GET http://localhost:8082/mushrooms/1f5b3836-7765-4d91-82f3-f4f9e69b232d
+Accept: application/json
+
+### Mushroom - Update
+PUT http://localhost:8082/mushrooms/1f5b3836-7765-4d91-82f3-f4f9e69b232d
+Content-Type: application/json
+
+{
+  "name": "Updated Test Mushroom",
+  "toxic": "Slightly Toxic"
+}
+
+### Mushroom - Delete
+DELETE http://localhost:8082/mushrooms/1f5b3836-7765-4d91-82f3-f4f9e69b232d
+
+### MushroomPickers - Get all
+GET http://localhost:8082/categories

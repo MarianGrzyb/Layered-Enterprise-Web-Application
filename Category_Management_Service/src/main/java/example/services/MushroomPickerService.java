@@ -1,0 +1,45 @@
+package example.services;
+
+import example.entities.category.MushroomPicker;
+
+import example.repositories.MushroomPickerRepository;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.UUID;
+
+@Service
+public class MushroomPickerService {
+    private final MushroomPickerRepository mushroomPickerRepository;
+    private final ElementServiceClient elementClient;
+
+    public MushroomPickerService(MushroomPickerRepository mushroomPickerRepository, ElementServiceClient elementClient) {
+        this.mushroomPickerRepository = mushroomPickerRepository;
+        this.elementClient = elementClient;
+    }
+
+    public List<MushroomPicker> findAll() {
+        return mushroomPickerRepository.findAll();
+    }
+
+    public MushroomPicker findById(UUID id) {
+        return mushroomPickerRepository.findById(id).orElse(null);
+    }
+
+    public MushroomPicker save(MushroomPicker picker) {
+        MushroomPicker saved = mushroomPickerRepository.save(picker);
+        elementClient.notifyCategoryCreated(saved.getId(), saved.getName(), saved.getSurname());
+        return saved;
+    }
+
+    public void deleteById(UUID id) {
+        if (!mushroomPickerRepository.existsById(id)) {
+            throw new EntityNotFoundException();
+        }
+
+        mushroomPickerRepository.deleteById(id);
+        elementClient.notifyCategoryDeleted(id);
+    }
+}
+
