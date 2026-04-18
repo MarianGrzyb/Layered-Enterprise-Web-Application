@@ -1,0 +1,61 @@
+### MushroomPicker - Create
+POST http://localhost:8080/mushroomPickers
+Content-Type: application/json
+
+{
+  "name": "Zia",
+  "surname": "ZIE"
+}
+
+### MushroomPicker - Get all
+GET http://localhost:8080/mushroomPickers
+Accept: application/json
+
+### MushroomPicker - Get by ID
+GET http://localhost:8080/mushroomPickers/2b5497a9-f3b4-4d76-9d09-3f2e759f2e44
+Accept: application/json
+
+### MushroomPicker - Update
+PUT http://localhost:8080/mushroomPickers/2b5497a9-f3b4-4d76-9d09-3f2e759f2e44
+Content-Type: application/json
+
+{
+  "name": "ZIE",
+  "surname": "Zia"
+}
+
+### MushroomPicker - Delete
+DELETE http://localhost:8080/mushroomPickers/7b0da4b3-13f9-41fe-80e4-6baf55e5ebfb
+
+### MushroomPicker - Get all mushrooms for a picker
+GET http://localhost:8080/mushroomPickers/a20bb0bc-660c-4140-bbdd-bbb925592eb5/mushrooms
+Accept: application/json
+
+### MushroomPicker - Add mushroom to a picker
+POST http://localhost:8080/mushroomPickers/a20bb0bc-660c-4140-bbdd-bbb925592eb5/mushrooms
+Content-Type: application/json
+
+{
+  "name": "Test Mushroom",
+  "toxic": "Highly toxic"
+}
+
+### Mushroom - Get all
+GET http://localhost:8080/mushrooms
+Accept: application/json
+
+### Mushroom - Get by ID
+GET http://localhost:8080/mushrooms/a401ee4a-574a-49a1-9cb6-9952994af638
+Accept: application/json
+
+### Mushroom - Update
+PUT http://localhost:8080/mushrooms/a401ee4a-574a-49a1-9cb6-9952994af638
+Content-Type: application/json
+
+{
+  "name": "Updated Test Mushroom",
+  "toxic": "Slightly Toxic"
+}
+
+### Mushroom - Delete
+DELETE http://localhost:8080/mushrooms/a401ee4a-574a-49a1-9cb6-9952994af638
